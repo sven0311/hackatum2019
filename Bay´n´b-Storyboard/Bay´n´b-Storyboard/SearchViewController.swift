@@ -113,6 +113,9 @@ class SearchViewController: UIViewController {
             if (transport == 2) { //plane
                 vC.byPlane = true
             }
+            
+            vC.accommodationBeds = 2 //TODO
+            vC.activityString = "Skiing" //TODO
         }
         self.present(vC, animated: true, completion: nil)
         

@@ -18,6 +18,10 @@ class ResultViewController: UIViewController {
     var byPlane = false
     var car: Car?
     var publicTransport: PublicTransport?
+    var accommodation: Accommodation?
+    var activity: Activity?
+    var activityString = ""
+    var accommodationBeds = 0
     
     @IBOutlet weak var publicTransportView: UIView!
     @IBOutlet weak var publicTransportPrice: UILabel!
@@ -51,6 +55,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var accommodationBed: UILabel!
     @IBOutlet weak var accommodationPrice: UILabel!
     @IBOutlet weak var accommodationImage: UIImageView!
+    @IBOutlet weak var accommodationLocation: UILabel!
     
     @IBOutlet weak var accomodationTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var accommodationPTTopConstraint: NSLayoutConstraint!
@@ -59,10 +64,18 @@ class ResultViewController: UIViewController {
         print("edit transport")
     }
     
+    @objc func editAccomodation(_ gesture: UITapGestureRecognizer) {
+        print("edit accomodation")
+    }
+    
+    @objc func editActivity(_ gesture: UITapGestureRecognizer) {
+        print("edit activity")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(editTransport))
+        let transportRecognizer = UITapGestureRecognizer(target: self, action: #selector(editTransport))
         
         if byCar {
             publicTransportView.isHidden = true
@@ -70,7 +83,7 @@ class ResultViewController: UIViewController {
             accommodationPTTopConstraint.isActive = false
             accomodationTopConstraint.isActive = true
             
-            carView.addGestureRecognizer(recognizer)
+            carView.addGestureRecognizer(transportRecognizer)
             
             car = Car(addressFrom: addressFrom, addressTo: addressTo)
             car!.delegate = self
@@ -82,7 +95,7 @@ class ResultViewController: UIViewController {
             accommodationPTTopConstraint.isActive = true
             accomodationTopConstraint.isActive = false
             
-            publicTransportView.addGestureRecognizer(recognizer)
+            publicTransportView.addGestureRecognizer(transportRecognizer)
             
             if (byTrain) {
                 publicTransport = PublicTransport(cityStart: addressFrom, cityEnd: addressTo, byTrain: true, delegate: self)
@@ -97,6 +110,18 @@ class ResultViewController: UIViewController {
                 publicTransportIcon.image = UIImage(systemName: "airplane")
             }
         }
+        
+        let accomodationRecognizer = UITapGestureRecognizer(target: self, action: #selector(editAccomodation))
+        accommodationView.addGestureRecognizer(accomodationRecognizer)
+
+        accommodation = Accommodation(bed: accommodationBeds, location: addressTo, delegate: self)
+        accommodationValuesDidChange()
+        
+//        let activityRecognizer = UITapGestureRecognizer(target: self, action: #selector(editActivity))
+//        activityView.addGestureRecognizer(activityRecognizer)
+        
+        activity = Activity(activity: activityString, delegate: self)
+        activityValuesDidChange()
     }
 }
 extension ResultViewController: CarDelegate {
@@ -108,6 +133,24 @@ extension ResultViewController: CarDelegate {
         carTime.text = (car!.time.rounded(toPlaces: 0)/3600).rounded(toPlaces: 1).description + " h"
         carDistance.text = car!.distance.rounded(toPlaces: 1).description + " km"
         carPrice.text = car!.price.rounded(toPlaces: 2).description + " €"
+    }
+}
+
+extension ResultViewController: ActivityDelegate {
+    func activityValuesDidChange() {
+        // TODO
+//        acitivityLabel.text = activity!.activity
+//        activityPrice.text = activity!.price.rounded(toPlaces: 2).description + " €"
+    }
+}
+
+extension ResultViewController: AccommodationDelegate {
+    func accommodationValuesDidChange() {
+        accommodationBed.text = accommodation!.beds.description
+        accomodationRooms.text = accommodation?.rooms.description
+        accommodationPrice.text = accommodation!.price.rounded(toPlaces: 2).description + " €"
+        accommodationLocation.text = accommodation!.location.description
+        accommodationImage.image = accommodation?.image
     }
 }
 
@@ -138,7 +181,7 @@ extension ResultViewController: PublicTransportDelegate {
             return
         }
         
-        publicTransportPrice.text = publicTransport!.publicTransportPrice.description
+        publicTransportPrice.text = publicTransport!.publicTransportPrice.rounded(toPlaces: 2).description + " €"
         publicTransportEndPoint.text = publicTransport!.publicTransportEndPoint
         publicTransportStartPoint.text = publicTransport!.publicTransportStartPoint
         publicTransportArrivalTime.text = publicTransport!.publicTransportArrivalTime

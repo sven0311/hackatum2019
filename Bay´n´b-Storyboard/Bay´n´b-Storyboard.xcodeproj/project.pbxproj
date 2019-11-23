@@ -18,6 +18,7 @@
 		A35B65EC2389484400D6044E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B65EB2389484400D6044E /* Car.swift */; };
 		A35B65EE238966B200D6044E /* PublicTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B65ED238966B200D6044E /* PublicTransport.swift */; };
 		A36A27A92389954F00A7F89E /* Accommodation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27A82389954F00A7F89E /* Accommodation.swift */; };
+		A36A27AB2389AA9300A7F89E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27AA2389AA9300A7F89E /* Activity.swift */; };
 		A396B53E23888D6B00665F00 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B53D23888D6B00665F00 /* SearchViewController.swift */; };
 		A396B54023889B4B00665F00 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B53F23889B4B00665F00 /* TripViewController.swift */; };
 		A396B5422388B57A00665F00 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B5412388B57A00665F00 /* ResultViewController.swift */; };
@@ -37,6 +38,7 @@
 		A35B65EB2389484400D6044E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		A35B65ED238966B200D6044E /* PublicTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTransport.swift; sourceTree = "<group>"; };
 		A36A27A82389954F00A7F89E /* Accommodation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accommodation.swift; sourceTree = "<group>"; };
+		A36A27AA2389AA9300A7F89E /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		A396B53D23888D6B00665F00 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A396B53F23889B4B00665F00 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		A396B5412388B57A00665F00 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				A35B65EB2389484400D6044E /* Car.swift */,
 				A35B65ED238966B200D6044E /* PublicTransport.swift */,
 				A36A27A82389954F00A7F89E /* Accommodation.swift */,
+				A36A27AA2389AA9300A7F89E /* Activity.swift */,
 			);
 			path = "Bay´n´b-Storyboard";
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				A357CBE02388814B00F708CD /* SceneDelegate.swift in Sources */,
 				A35B65EE238966B200D6044E /* PublicTransport.swift in Sources */,
 				A36A27A92389954F00A7F89E /* Accommodation.swift in Sources */,
+				A36A27AB2389AA9300A7F89E /* Activity.swift in Sources */,
 				A357CBF2238887A200F708CD /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
