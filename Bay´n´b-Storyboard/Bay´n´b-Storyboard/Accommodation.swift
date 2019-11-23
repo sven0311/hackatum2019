@@ -67,8 +67,7 @@ protocol AccommodationDelegate {
     func accommodationValuesDidChange()
 }
 
-
-private var mockAccommodations: [Accommodation] = [
+var mockAccommodations: [Accommodation] = [
     Accommodation(beds: 2, rooms: 1, price: 89, location: "Garmisch-Partenkirchen - Hauptstraße 4", image: UIImage(named: "huette1")),
     Accommodation(beds: 4, rooms: 2, price: 140, location: "Garmisch-Partenkirchen - Dorfstraße 34", image: UIImage(named: "huette2")),
     Accommodation(beds: 3, rooms: 1, price: 99, location: "Garmisch-Partenkirchen - Reichsweg 56b", image: UIImage(named: "huette3")),

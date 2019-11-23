@@ -10,18 +10,30 @@ import UIKit
 
 class ChangeAccommodationTableViewController : UITableViewController {
     
+    var resDelegate: EditAccommodation?
     var accommodations: [Accommodation]?
+    var days = 0.0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        resDelegate?.updateAccommodation(acc: accommodations![indexPath.row])
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return accommodations!.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let table = tableView.dequeueReusableCell(withIdentifier: "accommodationChangeCell")
+        let accTable = table as! ChangeAccommodationTableViewCell
         
-        .dataSource = self
-
+        accTable.accommodation = accommodations![indexPath.row]
+        accTable.days = days
+        return accTable
     }
 }
 
-extension ChangeAccommodationTableViewController: UITableViewDataSource {
-
+protocol EditAccommodation {
+    func updateAccommodation(acc: Accommodation)
 }
-
 

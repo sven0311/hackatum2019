@@ -89,7 +89,10 @@ class ResultViewController: UIViewController {
     @objc func editAccomodation(_ gesture: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vC = storyboard.instantiateViewController(identifier: "changeAccommodation")
-        
+        let changeAccView = vC as! ChangeAccommodationTableViewController
+        changeAccView.accommodations = mockAccommodations
+        changeAccView.days = days
+        changeAccView.resDelegate = self
         present(vC, animated: true, completion: nil)
     }
     
@@ -230,6 +233,14 @@ extension ResultViewController: PublicTransportDelegate {
         
         totalPrice += publicTransport!.publicTransportPrice.rounded(toPlaces: 2)
 
+    }
+}
+
+extension ResultViewController: EditAccommodation {
+    func updateAccommodation(acc: Accommodation) {
+        totalPrice -= accommodation!.price * days
+        accommodation = acc
+        accommodationValuesDidChange()
     }
 }
 

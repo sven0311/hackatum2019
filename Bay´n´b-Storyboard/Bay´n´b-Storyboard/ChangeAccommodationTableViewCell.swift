@@ -10,7 +10,11 @@ import UIKit
 
 class ChangeAccommodationTableViewCell: UITableViewCell {
     
-    var days = 0.0
+    var days = 0.0 {
+        didSet {
+            priceLabel.text = (accommodation!.price * days).rounded(toPlaces: 2).description
+        }
+    }
     var accommodation: Accommodation? {
         didSet {
             updateView()
