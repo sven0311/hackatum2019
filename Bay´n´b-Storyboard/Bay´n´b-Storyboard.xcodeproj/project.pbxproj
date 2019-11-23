@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26753F2A238965100064EC8A /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26753F29238965100064EC8A /* DesignableTextField.swift */; };
 		A357CBDE2388814B00F708CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357CBDD2388814B00F708CD /* AppDelegate.swift */; };
 		A357CBE02388814B00F708CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357CBDF2388814B00F708CD /* SceneDelegate.swift */; };
 		A357CBE22388814B00F708CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357CBE12388814B00F708CD /* ViewController.swift */; };
@@ -24,7 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A357CBDA2388814B00F708CD /* Bay´n´b-Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay´n´b-Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26753F29238965100064EC8A /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		A357CBDA2388814B00F708CD /* Bay'n'B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay'n'B.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A357CBDD2388814B00F708CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A357CBDF2388814B00F708CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A357CBE12388814B00F708CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		A357CBDB2388814B00F708CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A357CBDA2388814B00F708CD /* Bay´n´b-Storyboard.app */,
+				A357CBDA2388814B00F708CD /* Bay'n'B.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +85,7 @@
 				A396B53D23888D6B00665F00 /* SearchViewController.swift */,
 				A396B53F23889B4B00665F00 /* TripViewController.swift */,
 				A396B5412388B57A00665F00 /* ResultViewController.swift */,
+				26753F29238965100064EC8A /* DesignableTextField.swift */,
 				A35B65EB2389484400D6044E /* Car.swift */,
 				A35B65ED238966B200D6044E /* PublicTransport.swift */,
 				A36A27A82389954F00A7F89E /* Accommodation.swift */,
@@ -108,7 +111,7 @@
 			);
 			name = "Bay´n´b-Storyboard";
 			productName = "Bay´n´b-Storyboard";
-			productReference = A357CBDA2388814B00F708CD /* Bay´n´b-Storyboard.app */;
+			productReference = A357CBDA2388814B00F708CD /* Bay'n'B.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,6 +169,7 @@
 				A357CBE22388814B00F708CD /* ViewController.swift in Sources */,
 				A35B65EC2389484400D6044E /* Car.swift in Sources */,
 				A396B5422388B57A00665F00 /* ResultViewController.swift in Sources */,
+				26753F2A238965100064EC8A /* DesignableTextField.swift in Sources */,
 				A357CBDE2388814B00F708CD /* AppDelegate.swift in Sources */,
 				A396B54023889B4B00665F00 /* TripViewController.swift in Sources */,
 				A357CBE02388814B00F708CD /* SceneDelegate.swift in Sources */,
@@ -324,7 +328,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tum.in.ase.Bay-n-b-Storyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bay'n'B";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -342,7 +346,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tum.in.ase.Bay-n-b-Storyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bay'n'B";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
