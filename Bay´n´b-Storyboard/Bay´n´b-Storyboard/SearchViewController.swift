@@ -104,8 +104,8 @@ class SearchViewController: UIViewController {
             let transport = bySegmentControl.selectedSegmentIndex
             if (transport == 0) { //car
                 vC.byCar = true
-                vC.addressTo = "Garmisch-Partenkirchen" //TODO
-                vC.addressFrom = "München" //TODO
+                vC.addressTo = "Garmisch-Partenkirchen" 
+                vC.addressFrom = "München"
             }
             if (transport == 1) { //train
                 vC.byTrain = true
@@ -114,8 +114,8 @@ class SearchViewController: UIViewController {
                 vC.byPlane = true
             }
             
-            vC.accommodationBeds = 2 //TODO
-            vC.activityString = "Skiing" //TODO
+            vC.accommodationBeds = 2
+            vC.activityString = "Skiing"
             vC.days = Double(toDate.date.offsetFrom(date: fromDate.date)) + 1.0
             vC.fromDate = fromDate.date
             vC.toDate = toDate.date

@@ -22,13 +22,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func login(_ sender: Any) {
-//        TODO
-//        if (emailTextField.text?.isEmpty ?? true || passwordTextField.text?.isEmpty ?? true) {
-//            let alert = UIAlertController(title: "Credentials wrong", message: "Email or Password Wrong", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "okay", style: .default, handler: nil))
-//            present(alert, animated: true, completion: nil)
-//            return
-//        }
+        if (emailTextField.text?.isEmpty ?? true || passwordTextField.text?.isEmpty ?? true) {
+            let alert = UIAlertController(title: "Credentials wrong", message: "Email or Password Wrong", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "okay", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
         
         UIView.animate(withDuration: 0.35, animations: {
             self.emailTextField.alpha = 0.0
