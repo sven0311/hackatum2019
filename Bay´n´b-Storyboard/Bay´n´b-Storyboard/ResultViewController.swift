@@ -25,8 +25,14 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var publicTransportEndPoint: UILabel!
     @IBOutlet weak var publicTransportDepartureTime: UILabel!
     @IBOutlet weak var publicTransportArrivalTime: UILabel!
-    @IBOutlet weak var publicTransportLabel: UILabel!
     @IBOutlet weak var noPublicTransportLabel: UILabel!
+    @IBOutlet weak var noPublicTransportConnectionLabel: UILabel!
+    @IBOutlet weak var publicTransportIcon: UIImageView!
+    @IBOutlet weak var pTStartPoint: UIImageView!
+    @IBOutlet weak var pTEndPoint: UIImageView!
+    @IBOutlet weak var pTDepartureTime: UIImageView!
+    @IBOutlet weak var pTArrivalTime: UIImageView!
+    @IBOutlet weak var pTPrice: UIImageView!
     
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var startPointLabel: UILabel!
@@ -46,6 +52,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var accommodationPrice: UILabel!
     @IBOutlet weak var accommodationImage: UIImageView!
     
+    @IBOutlet weak var accomodationTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var accommodationPTTopConstraint: NSLayoutConstraint!
     
     @objc func editTransport(_ gesture: UITapGestureRecognizer) {
         print("edit transport")
@@ -58,6 +66,9 @@ class ResultViewController: UIViewController {
         
         if byCar {
             publicTransportView.isHidden = true
+            carView.isHidden = false
+            accommodationPTTopConstraint.isActive = false
+            accomodationTopConstraint.isActive = true
             
             carView.addGestureRecognizer(recognizer)
             
@@ -67,24 +78,25 @@ class ResultViewController: UIViewController {
         
         if byTrain || byPlane {
             carView.isHidden = true
-            
+            publicTransportView.isHidden = false
+            accommodationPTTopConstraint.isActive = true
+            accomodationTopConstraint.isActive = false
             
             publicTransportView.addGestureRecognizer(recognizer)
             
             if (byTrain) {
                 publicTransport = PublicTransport(cityStart: addressFrom, cityEnd: addressTo, byTrain: true, delegate: self)
                 trainValuesDidChange()
+                
+                publicTransportIcon.image = UIImage(systemName: "tram.fill")
             }
             if (byPlane) {
                 publicTransport = PublicTransport(cityStart: addressFrom, cityEnd: addressTo, byTrain: false, delegate: self)
                 trainValuesDidChange()
+                
+                publicTransportIcon.image = UIImage(systemName: "airplane")
             }
         }
-    
-//        accommodationImage.
-        
-
-        
     }
 }
 extension ResultViewController: CarDelegate {
@@ -103,6 +115,7 @@ extension ResultViewController: PublicTransportDelegate {
     func trainValuesDidChange() {
         if (publicTransport!.noPublicTransportAvailable) {
             noPublicTransportLabel.isHidden = false
+            noPublicTransportConnectionLabel.isHidden = false
             publicTransportArrivalTime.isHidden = true
             publicTransportStartPoint.isHidden = true
             publicTransportEndPoint.isHidden = true
@@ -114,7 +127,13 @@ extension ResultViewController: PublicTransportDelegate {
             endPointLabel.isHidden = true
             startPointLabel.isHidden = true
             arrivalTimeLabel.isHidden = true
-            publicTransportLabel.isHidden = true
+            publicTransportIcon.isHidden = true
+            
+            pTStartPoint.isHidden = true
+            pTEndPoint.isHidden = true
+            pTDepartureTime.isHidden = true
+            pTArrivalTime.isHidden = true
+            pTPrice.isHidden = true
 
             return
         }
