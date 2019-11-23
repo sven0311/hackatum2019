@@ -22,7 +22,7 @@
 
 /* Begin PBXFileReference section */
 		26753F29238965100064EC8A /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
-		A357CBDA2388814B00F708CD /* Bay´n´b-Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay´n´b-Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A357CBDA2388814B00F708CD /* Bay'n'B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay'n'B.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A357CBDD2388814B00F708CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A357CBDF2388814B00F708CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A357CBE12388814B00F708CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		A357CBDB2388814B00F708CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A357CBDA2388814B00F708CD /* Bay´n´b-Storyboard.app */,
+				A357CBDA2388814B00F708CD /* Bay'n'B.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,7 +99,7 @@
 			);
 			name = "Bay´n´b-Storyboard";
 			productName = "Bay´n´b-Storyboard";
-			productReference = A357CBDA2388814B00F708CD /* Bay´n´b-Storyboard.app */;
+			productReference = A357CBDA2388814B00F708CD /* Bay'n'B.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -312,7 +312,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tum.in.ase.Bay-n-b-Storyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bay'n'B";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -330,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.tum.in.ase.Bay-n-b-Storyboard";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Bay'n'B";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
