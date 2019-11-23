@@ -642,6 +642,54 @@
                                     <constraint firstItem="S3t-cE-xjx" firstAttribute="top" secondItem="DY7-TW-pn0" secondAttribute="bottom" constant="16" id="vSK-wD-V5y"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Kp-gK-kZN">
+                                <rect key="frame" x="20" y="588" width="374" height="146"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acitivity:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhF-Fl-EqL">
+                                        <rect key="frame" x="16" y="14" width="65" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e2e-jn-VxW">
+                                        <rect key="frame" x="27" y="62" width="43.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" ambiguous="YES" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdz-GN-QeP">
+                                        <rect key="frame" x="27" y="105" width="43.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9D-6e-FEO">
+                                        <rect key="frame" x="220" y="105" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="NhF-Fl-EqL" firstAttribute="top" secondItem="8Kp-gK-kZN" secondAttribute="top" constant="14" id="8wv-8e-DBj"/>
+                                    <constraint firstItem="Rdz-GN-QeP" firstAttribute="trailing" secondItem="e2e-jn-VxW" secondAttribute="trailing" id="9Ro-nt-8a8"/>
+                                    <constraint firstAttribute="height" constant="195" id="Elr-jk-p93"/>
+                                    <constraint firstItem="Rdz-GN-QeP" firstAttribute="trailing" secondItem="e2e-jn-VxW" secondAttribute="trailing" id="J95-pd-sdH"/>
+                                    <constraint firstItem="NhF-Fl-EqL" firstAttribute="leading" secondItem="8Kp-gK-kZN" secondAttribute="leading" constant="16" id="OeS-6E-LIa"/>
+                                    <constraint firstItem="Rdz-GN-QeP" firstAttribute="leading" secondItem="e2e-jn-VxW" secondAttribute="leading" id="bGP-zl-ZZW"/>
+                                    <constraint firstItem="Rdz-GN-QeP" firstAttribute="leading" secondItem="e2e-jn-VxW" secondAttribute="leading" id="pjc-3F-iQq"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nxf-rD-IFd">
+                                <rect key="frame" x="138" y="783" width="35" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Book"/>
+                                <connections>
+                                    <action selector="book:" destination="fpw-PN-iS6" eventType="touchUpInside" id="FoB-yj-XsK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96300194299999997" green="0.96300194299999997" blue="0.96300194299999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -666,7 +714,10 @@
                         <outlet property="accommodationPrice" destination="zOT-qM-axw" id="J1n-jb-s73"/>
                         <outlet property="accommodationView" destination="8t0-pG-5i5" id="DPy-LM-pNR"/>
                         <outlet property="accomodationRooms" destination="q5H-R9-3kA" id="KWS-JZ-i7Z"/>
+                        <outlet property="acitivityLabel" destination="e2e-jn-VxW" id="pcS-KN-4Sn"/>
+                        <outlet property="activityPrice" destination="g9D-6e-FEO" id="pkh-S9-sKg"/>
                         <outlet property="arrivalTimeLabel" destination="tKA-v4-vy5" id="zTo-xN-BUh"/>
+                        <outlet property="bookButton" destination="Nxf-rD-IFd" id="uFr-bT-XsH"/>
                         <outlet property="carDistance" destination="L5s-h9-9AS" id="nYi-bc-5yZ"/>
                         <outlet property="carPrice" destination="Wch-Eh-6Mu" id="ng0-dI-Df1"/>
                         <outlet property="carTime" destination="Uwh-uQ-cTS" id="7hn-Gx-yzm"/>

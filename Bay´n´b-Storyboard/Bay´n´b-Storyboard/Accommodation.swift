@@ -52,6 +52,8 @@ class Accommodation {
     }
     
     private func getAccommodationList(bed: Int, location: String) -> [Accommodation] {
+        //TODO Activity API call
+        
         return mockAccommodations
     }
     

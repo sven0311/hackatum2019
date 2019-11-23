@@ -37,7 +37,8 @@ class SearchViewController: UIViewController {
                 vC.byPlane = true
             }
             
-            vC.accommodationBeds = 2 //todo
+            vC.accommodationBeds = 2 //TODO
+            vC.activityString = "Skiing" //TODO
         }
         self.present(vC, animated: true, completion: nil)
         
