@@ -60,6 +60,8 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var accomodationTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var accommodationPTTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var activityPrice: UILabel!
     @objc func editTransport(_ gesture: UITapGestureRecognizer) {
         print("edit transport")
     }
@@ -138,9 +140,8 @@ extension ResultViewController: CarDelegate {
 
 extension ResultViewController: ActivityDelegate {
     func activityValuesDidChange() {
-        // TODO
-//        acitivityLabel.text = activity!.activity
-//        activityPrice.text = activity!.price.rounded(toPlaces: 2).description + " €"
+        activityLabel.text = activity!.activity
+        activityPrice.text = activity!.price.rounded(toPlaces: 2).description + " €"
     }
 }
 
