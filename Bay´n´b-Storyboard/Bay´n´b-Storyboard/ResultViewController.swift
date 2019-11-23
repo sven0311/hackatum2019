@@ -22,6 +22,14 @@ class ResultViewController: UIViewController {
     var activity: Activity?
     var activityString = ""
     var accommodationBeds = 0
+    var totalPrice = 0.0 {
+        didSet {
+            bookButton.setTitle("Book now \(totalPrice)", for: .normal)
+        }
+    }
+    var days = 0.0
+    var fromDate = Date()
+    var toDate = Date()
     
     @IBOutlet weak var publicTransportView: UIView!
     @IBOutlet weak var publicTransportPrice: UILabel!
@@ -62,12 +70,27 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var activityLabel: UILabel!
     @IBOutlet weak var activityPrice: UILabel!
+    
+    @IBOutlet weak var bookButton: UIButton!
+    
+    @IBAction func book(_ sender: Any) {
+        TripsViewController.trips.append((publicTransport, car, accommodation!, activity!))
+        let alert = UIAlertController(title: "Succesfully booked", message: "Your trip is added to your upcoming trips", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @objc func editTransport(_ gesture: UITapGestureRecognizer) {
         print("edit transport")
     }
     
     @objc func editAccomodation(_ gesture: UITapGestureRecognizer) {
-        print("edit accomodation")
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vC = storyboard.instantiateViewController(identifier: "changeAccommodation")
+        
+        present(vC, animated: true, completion: nil)
     }
     
     @objc func editActivity(_ gesture: UITapGestureRecognizer) {
@@ -89,6 +112,7 @@ class ResultViewController: UIViewController {
             
             car = Car(addressFrom: addressFrom, addressTo: addressTo)
             car!.delegate = self
+            carMap.delegate = self
         }
         
         if byTrain || byPlane {
@@ -116,7 +140,7 @@ class ResultViewController: UIViewController {
         let accomodationRecognizer = UITapGestureRecognizer(target: self, action: #selector(editAccomodation))
         accommodationView.addGestureRecognizer(accomodationRecognizer)
 
-        accommodation = Accommodation(bed: accommodationBeds, location: addressTo, delegate: self)
+        accommodation = Accommodation(bed: accommodationBeds, location: addressTo, fromDate: fromDate, toDate: toDate, delegate: self)
         accommodationValuesDidChange()
         
 //        let activityRecognizer = UITapGestureRecognizer(target: self, action: #selector(editActivity))
@@ -124,24 +148,37 @@ class ResultViewController: UIViewController {
         
         activity = Activity(activity: activityString, delegate: self)
         activityValuesDidChange()
+        
+        
+        bookButton.setTitle("Book now \(totalPrice)", for: .normal)
     }
 }
 extension ResultViewController: CarDelegate {
     func carValuesDidChange() {
-        carMap.addOverlay((car!.route.polyline), level: MKOverlayLevel.aboveRoads)
         
-        let rect = car!.route.polyline.boundingMapRect
+        carMap.addOverlay((car!.route.polyline))
+        
+        var rect = car!.route.polyline.boundingMapRect
+        rect.origin.x -= 40000
+        rect.origin.y -= 40000
+        rect.size = MKMapSize(width: rect.width + 80000, height: rect.height + 80000)
         self.carMap.setRegion(MKCoordinateRegion(rect), animated: true)
+        
         carTime.text = (car!.time.rounded(toPlaces: 0)/3600).rounded(toPlaces: 1).description + " h"
         carDistance.text = car!.distance.rounded(toPlaces: 1).description + " km"
         carPrice.text = car!.price.rounded(toPlaces: 2).description + " €"
+        
+        totalPrice += car!.price.rounded(toPlaces: 2)
     }
 }
 
 extension ResultViewController: ActivityDelegate {
     func activityValuesDidChange() {
         activityLabel.text = activity!.activity
-        activityPrice.text = activity!.price.rounded(toPlaces: 2).description + " €"
+        activityPrice.text = (days * activity!.price).rounded(toPlaces: 2).description + " €"
+        
+        totalPrice += (days * activity!.price).rounded(toPlaces: 2)
+
     }
 }
 
@@ -149,9 +186,12 @@ extension ResultViewController: AccommodationDelegate {
     func accommodationValuesDidChange() {
         accommodationBed.text = accommodation!.beds.description
         accomodationRooms.text = accommodation?.rooms.description
-        accommodationPrice.text = accommodation!.price.rounded(toPlaces: 2).description + " €"
+        accommodationPrice.text = (days * accommodation!.price).rounded(toPlaces: 2).description + " €"
         accommodationLocation.text = accommodation!.location.description
         accommodationImage.image = accommodation?.image
+        
+        totalPrice += (days * accommodation!.price).rounded(toPlaces: 2)
+
     }
 }
 
@@ -187,16 +227,29 @@ extension ResultViewController: PublicTransportDelegate {
         publicTransportStartPoint.text = publicTransport!.publicTransportStartPoint
         publicTransportArrivalTime.text = publicTransport!.publicTransportArrivalTime
         publicTransportDepartureTime.text = publicTransport!.publicTransportDepartureTime
+        
+        totalPrice += publicTransport!.publicTransportPrice.rounded(toPlaces: 2)
+
     }
 }
 
 extension ResultViewController: MKMapViewDelegate {
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-        let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = .red
-        renderer.lineWidth = 4.0
-    
-        return renderer
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+    let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+    if (overlay is MKPolyline) {
+      if mapView.overlays.count == 1 {
+        polylineRenderer.strokeColor =
+            UIColor.blue
+      } else if mapView.overlays.count == 2 {
+        polylineRenderer.strokeColor =
+            UIColor.green
+      } else if mapView.overlays.count == 3 {
+        polylineRenderer.strokeColor =
+          UIColor.red
+      }
+      polylineRenderer.lineWidth = 5
+    }
+    return polylineRenderer
     }
 }
 

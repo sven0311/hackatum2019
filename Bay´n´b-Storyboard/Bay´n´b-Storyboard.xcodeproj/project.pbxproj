@@ -19,8 +19,11 @@
 		A35B65EE238966B200D6044E /* PublicTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B65ED238966B200D6044E /* PublicTransport.swift */; };
 		A36A27A92389954F00A7F89E /* Accommodation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27A82389954F00A7F89E /* Accommodation.swift */; };
 		A36A27AB2389AA9300A7F89E /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27AA2389AA9300A7F89E /* Activity.swift */; };
+		A36A27AD2389DCF100A7F89E /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27AC2389DCF100A7F89E /* TripsViewController.swift */; };
+		A36A27AF2389E01B00A7F89E /* TripsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27AE2389E01B00A7F89E /* TripsTableViewCell.swift */; };
+		A36A27B12389EA5500A7F89E /* ChangeAccommodationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27B02389EA5500A7F89E /* ChangeAccommodationTableViewController.swift */; };
+		A36A27B32389EC8F00A7F89E /* ChangeAccommodationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27B22389EC8F00A7F89E /* ChangeAccommodationTableViewCell.swift */; };
 		A396B53E23888D6B00665F00 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B53D23888D6B00665F00 /* SearchViewController.swift */; };
-		A396B54023889B4B00665F00 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B53F23889B4B00665F00 /* TripViewController.swift */; };
 		A396B5422388B57A00665F00 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B5412388B57A00665F00 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +42,11 @@
 		A35B65ED238966B200D6044E /* PublicTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTransport.swift; sourceTree = "<group>"; };
 		A36A27A82389954F00A7F89E /* Accommodation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accommodation.swift; sourceTree = "<group>"; };
 		A36A27AA2389AA9300A7F89E /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		A36A27AC2389DCF100A7F89E /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		A36A27AE2389E01B00A7F89E /* TripsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsTableViewCell.swift; sourceTree = "<group>"; };
+		A36A27B02389EA5500A7F89E /* ChangeAccommodationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAccommodationTableViewController.swift; sourceTree = "<group>"; };
+		A36A27B22389EC8F00A7F89E /* ChangeAccommodationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAccommodationTableViewCell.swift; sourceTree = "<group>"; };
 		A396B53D23888D6B00665F00 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		A396B53F23889B4B00665F00 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		A396B5412388B57A00665F00 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,13 +89,16 @@
 				A357CBE82388814C00F708CD /* LaunchScreen.storyboard */,
 				A357CBEB2388814C00F708CD /* Info.plist */,
 				A396B53D23888D6B00665F00 /* SearchViewController.swift */,
-				A396B53F23889B4B00665F00 /* TripViewController.swift */,
 				A396B5412388B57A00665F00 /* ResultViewController.swift */,
 				26753F29238965100064EC8A /* DesignableTextField.swift */,
 				A35B65EB2389484400D6044E /* Car.swift */,
 				A35B65ED238966B200D6044E /* PublicTransport.swift */,
 				A36A27A82389954F00A7F89E /* Accommodation.swift */,
 				A36A27AA2389AA9300A7F89E /* Activity.swift */,
+				A36A27AC2389DCF100A7F89E /* TripsViewController.swift */,
+				A36A27AE2389E01B00A7F89E /* TripsTableViewCell.swift */,
+				A36A27B02389EA5500A7F89E /* ChangeAccommodationTableViewController.swift */,
+				A36A27B22389EC8F00A7F89E /* ChangeAccommodationTableViewCell.swift */,
 			);
 			path = "Bay´n´b-Storyboard";
 			sourceTree = "<group>";
@@ -169,13 +178,16 @@
 				A357CBE22388814B00F708CD /* ViewController.swift in Sources */,
 				A35B65EC2389484400D6044E /* Car.swift in Sources */,
 				A396B5422388B57A00665F00 /* ResultViewController.swift in Sources */,
+				A36A27B32389EC8F00A7F89E /* ChangeAccommodationTableViewCell.swift in Sources */,
 				26753F2A238965100064EC8A /* DesignableTextField.swift in Sources */,
 				A357CBDE2388814B00F708CD /* AppDelegate.swift in Sources */,
-				A396B54023889B4B00665F00 /* TripViewController.swift in Sources */,
+				A36A27AD2389DCF100A7F89E /* TripsViewController.swift in Sources */,
+				A36A27AF2389E01B00A7F89E /* TripsTableViewCell.swift in Sources */,
 				A357CBE02388814B00F708CD /* SceneDelegate.swift in Sources */,
 				A35B65EE238966B200D6044E /* PublicTransport.swift in Sources */,
 				A36A27A92389954F00A7F89E /* Accommodation.swift in Sources */,
 				A36A27AB2389AA9300A7F89E /* Activity.swift in Sources */,
+				A36A27B12389EA5500A7F89E /* ChangeAccommodationTableViewController.swift in Sources */,
 				A357CBF2238887A200F708CD /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

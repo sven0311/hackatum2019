@@ -18,9 +18,13 @@ class Accommodation {
     public var price = 0.0
     public var location = ""
     public var image: UIImage?
+    public var fromDate = Date()
+    public var toDate = Date() + 150000
     
-    init(bed: Int, location: String, delegate: AccommodationDelegate) {
+    init(bed: Int, location: String, fromDate: Date, toDate: Date, delegate: AccommodationDelegate) {
         self.delegate = delegate
+        self.fromDate = fromDate
+        self.toDate = toDate
         getAccommodation(bed: bed, location: location)
     }
     

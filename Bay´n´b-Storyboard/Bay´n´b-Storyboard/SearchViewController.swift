@@ -116,6 +116,9 @@ class SearchViewController: UIViewController {
             
             vC.accommodationBeds = 2 //TODO
             vC.activityString = "Skiing" //TODO
+            vC.days = Double(toDate.date.offsetFrom(date: fromDate.date)) + 1.0
+            vC.fromDate = fromDate.date
+            vC.toDate = toDate.date
         }
         self.present(vC, animated: true, completion: nil)
         
@@ -199,3 +202,14 @@ extension Date {
     }
 }
 
+extension Date {
+
+    func offsetFrom(date : Date) -> Int {
+
+        let dayHourMinuteSecond: Set<Calendar.Component> = [.day]
+        let difference = NSCalendar.current.dateComponents(dayHourMinuteSecond, from: date, to: self);
+
+        return difference.day!
+    }
+
+}
