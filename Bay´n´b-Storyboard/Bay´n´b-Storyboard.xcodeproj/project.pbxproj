@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26753F2A238965100064EC8A /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26753F29238965100064EC8A /* DesignableTextField.swift */; };
 		A357CBDE2388814B00F708CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357CBDD2388814B00F708CD /* AppDelegate.swift */; };
 		A357CBE02388814B00F708CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357CBDF2388814B00F708CD /* SceneDelegate.swift */; };
 		A357CBE22388814B00F708CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357CBE12388814B00F708CD /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26753F29238965100064EC8A /* DesignableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
 		A357CBDA2388814B00F708CD /* Bay´n´b-Storyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bay´n´b-Storyboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A357CBDD2388814B00F708CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A357CBDF2388814B00F708CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				A396B53D23888D6B00665F00 /* SearchViewController.swift */,
 				A396B53F23889B4B00665F00 /* TripViewController.swift */,
 				A396B5412388B57A00665F00 /* ResultViewController.swift */,
+				26753F29238965100064EC8A /* DesignableTextField.swift */,
 			);
 			path = "Bay´n´b-Storyboard";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				A396B53E23888D6B00665F00 /* SearchViewController.swift in Sources */,
 				A357CBE22388814B00F708CD /* ViewController.swift in Sources */,
 				A396B5422388B57A00665F00 /* ResultViewController.swift in Sources */,
+				26753F2A238965100064EC8A /* DesignableTextField.swift in Sources */,
 				A357CBDE2388814B00F708CD /* AppDelegate.swift in Sources */,
 				A396B54023889B4B00665F00 /* TripViewController.swift in Sources */,
 				A357CBE02388814B00F708CD /* SceneDelegate.swift in Sources */,
