@@ -38,7 +38,7 @@ class PublicTransport {
     }
     
     private func getPlane(cityStart: String, cityEnd: String) {
-        let plane = plainList.min(by: compareTrains(train1:train2:))
+        let plane = getListOfPlanes(cityStart: cityStart, cityEnd: cityEnd).min(by: compareTrains(train1:train2:))
         
         guard let plane1 = plane else {
             noPublicTransportAvailable = true
@@ -53,7 +53,7 @@ class PublicTransport {
     }
     
     private func getTrain(cityStart: String, cityEnd: String) {
-        let train = trainList.min(by: compareTrains(train1:train2:))
+        let train = getListOfTrains(cityStart: cityStart, cityEnd: cityEnd).min(by: compareTrains(train1:train2:))
         
         guard let train1 = train else {
             noPublicTransportAvailable = true
@@ -66,6 +66,19 @@ class PublicTransport {
         self.publicTransportDepartureTime = train1.publicTransportDepartureTime
         self.publicTransportPrice = train1.publicTransportPrice
     }
+    
+    private func getListOfTrains(cityStart: String, cityEnd: String) -> [PublicTransport] {
+        //TODO DB-API call
+        
+        return trainList
+    }
+    
+    private func getListOfPlanes(cityStart: String, cityEnd: String) -> [PublicTransport] {
+        //TODO LH-API call
+        
+        return planeList
+    }
+    
     
     
     private func compareTrains(train1: PublicTransport, train2: PublicTransport) -> Bool {
@@ -92,4 +105,4 @@ private let trainList: [PublicTransport] = [
     PublicTransport(price: 34.15, start: "München HBF", end: "Garmisch-Partenkrichen BHF", departure: "10:30", arrival: "11:45")
 ]
 
-private let plainList: [PublicTransport] = []
+private let planeList: [PublicTransport] = []

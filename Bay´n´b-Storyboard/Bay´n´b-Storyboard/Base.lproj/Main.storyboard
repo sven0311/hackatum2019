@@ -587,6 +587,18 @@
                                             <constraint firstAttribute="width" secondItem="Rrv-Bh-wTA" secondAttribute="height" multiplier="1:1" id="fXc-BT-SKt"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAy-UD-kq9">
+                                        <rect key="frame" x="176" y="162" width="71" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIg-MS-OmN">
+                                        <rect key="frame" x="263" y="162" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -607,16 +619,21 @@
                                     <constraint firstItem="zOT-qM-axw" firstAttribute="trailing" secondItem="T2J-UC-IbL" secondAttribute="trailing" id="DoG-8k-wSH"/>
                                     <constraint firstItem="T2J-UC-IbL" firstAttribute="leading" secondItem="DY7-TW-pn0" secondAttribute="trailing" constant="32" id="IWy-fU-Jlk"/>
                                     <constraint firstItem="S3t-cE-xjx" firstAttribute="leading" secondItem="8dJ-Yu-EY4" secondAttribute="leading" id="JGk-nZ-4D7"/>
+                                    <constraint firstItem="xIg-MS-OmN" firstAttribute="leading" secondItem="TAy-UD-kq9" secondAttribute="trailing" constant="16" id="Jmf-Ag-EtK"/>
+                                    <constraint firstItem="TAy-UD-kq9" firstAttribute="top" secondItem="S3t-cE-xjx" secondAttribute="bottom" constant="16" id="LTH-V0-GEq"/>
                                     <constraint firstItem="8dJ-Yu-EY4" firstAttribute="top" secondItem="Rrv-Bh-wTA" secondAttribute="top" id="Q13-dV-nzB"/>
                                     <constraint firstAttribute="height" constant="195" id="QZ1-ny-XfU"/>
                                     <constraint firstItem="DY7-TW-pn0" firstAttribute="top" secondItem="8dJ-Yu-EY4" secondAttribute="bottom" constant="16" id="TZF-U0-c7b"/>
                                     <constraint firstItem="DY7-TW-pn0" firstAttribute="leading" secondItem="Rrv-Bh-wTA" secondAttribute="trailing" constant="32" id="VLY-tl-RCJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="xIg-MS-OmN" secondAttribute="trailing" constant="16" id="W6H-lZ-J9j"/>
                                     <constraint firstItem="d0s-76-W9K" firstAttribute="top" secondItem="8t0-pG-5i5" secondAttribute="top" constant="14" id="YAs-zm-TL1"/>
                                     <constraint firstItem="zOT-qM-axw" firstAttribute="trailing" secondItem="q5H-R9-3kA" secondAttribute="trailing" id="YZH-c6-BId"/>
                                     <constraint firstItem="S3t-cE-xjx" firstAttribute="leading" secondItem="8dJ-Yu-EY4" secondAttribute="leading" id="Yut-K1-YkP"/>
                                     <constraint firstItem="zOT-qM-axw" firstAttribute="top" secondItem="T2J-UC-IbL" secondAttribute="bottom" constant="16" id="aSr-RM-uEO"/>
                                     <constraint firstItem="Rrv-Bh-wTA" firstAttribute="top" secondItem="d0s-76-W9K" secondAttribute="bottom" constant="16" id="bmJ-gv-7CK"/>
+                                    <constraint firstItem="xIg-MS-OmN" firstAttribute="top" secondItem="zOT-qM-axw" secondAttribute="bottom" constant="16" id="fr0-xS-gaf"/>
                                     <constraint firstItem="zOT-qM-axw" firstAttribute="bottom" secondItem="S3t-cE-xjx" secondAttribute="bottom" id="kFh-A0-uEC"/>
+                                    <constraint firstItem="TAy-UD-kq9" firstAttribute="leading" secondItem="Rrv-Bh-wTA" secondAttribute="trailing" constant="32" id="n9M-Ca-2rx"/>
                                     <constraint firstItem="Rrv-Bh-wTA" firstAttribute="leading" secondItem="8t0-pG-5i5" secondAttribute="leading" constant="16" id="noM-Va-vB5"/>
                                     <constraint firstAttribute="bottom" secondItem="Rrv-Bh-wTA" secondAttribute="bottom" constant="16" id="sRM-3e-N6R"/>
                                     <constraint firstItem="DY7-TW-pn0" firstAttribute="leading" secondItem="8dJ-Yu-EY4" secondAttribute="leading" id="sgp-jo-8uN"/>
@@ -645,6 +662,7 @@
                         <outlet property="CarView" destination="oFf-M7-k7Y" id="J1t-1a-j0g"/>
                         <outlet property="accommodationBed" destination="T2J-UC-IbL" id="3Jc-Pc-lhX"/>
                         <outlet property="accommodationImage" destination="Rrv-Bh-wTA" id="hwN-OY-22r"/>
+                        <outlet property="accommodationLocation" destination="xIg-MS-OmN" id="oEw-gb-CuZ"/>
                         <outlet property="accommodationPrice" destination="zOT-qM-axw" id="J1n-jb-s73"/>
                         <outlet property="accommodationView" destination="8t0-pG-5i5" id="DPy-LM-pNR"/>
                         <outlet property="accomodationRooms" destination="q5H-R9-3kA" id="KWS-JZ-i7Z"/>

@@ -18,6 +18,8 @@ class ResultViewController: UIViewController {
     var byPlane = false
     var car: Car?
     var publicTransport: PublicTransport?
+    var accommodation: Accommodation?
+    var accommodationBeds = 0
     
     @IBOutlet weak var publicTransportView: UIView!
     @IBOutlet weak var publicTransportPrice: UILabel!
@@ -45,7 +47,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var accommodationBed: UILabel!
     @IBOutlet weak var accommodationPrice: UILabel!
     @IBOutlet weak var accommodationImage: UIImageView!
-    
+    @IBOutlet weak var accommodationLocation: UILabel!
     
     @objc func editTransport(_ gesture: UITapGestureRecognizer) {
         print("edit transport")
@@ -81,9 +83,10 @@ class ResultViewController: UIViewController {
             }
         }
     
-//        accommodationImage.
-        
 
+        accommodation = Accommodation(bed: accommodationBeds, location: addressTo, delegate: self)
+        accommodationValuesDidChange()
+        
         
     }
 }
@@ -96,6 +99,16 @@ extension ResultViewController: CarDelegate {
         carTime.text = (car!.time.rounded(toPlaces: 0)/3600).rounded(toPlaces: 1).description + " h"
         carDistance.text = car!.distance.rounded(toPlaces: 1).description + " km"
         carPrice.text = car!.price.rounded(toPlaces: 2).description + " €"
+    }
+}
+
+extension ResultViewController: AccommodationDelegate {
+    func accommodationValuesDidChange() {
+        accommodationBed.text = accommodation!.beds.description
+        accomodationRooms.text = accommodation?.rooms.description
+        accommodationPrice.text = accommodation!.price.rounded(toPlaces: 2).description + " €"
+        accommodationLocation.text = accommodation!.location.description
+        accommodationImage.image = accommodation?.image
     }
 }
 
