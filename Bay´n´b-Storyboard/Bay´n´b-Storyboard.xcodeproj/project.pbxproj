@@ -15,6 +15,9 @@
 		A357CBE72388814C00F708CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A357CBE62388814C00F708CD /* Assets.xcassets */; };
 		A357CBEA2388814C00F708CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A357CBE82388814C00F708CD /* LaunchScreen.storyboard */; };
 		A357CBF2238887A200F708CD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A357CBF1238887A200F708CD /* MainViewController.swift */; };
+		A35B65EC2389484400D6044E /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B65EB2389484400D6044E /* Car.swift */; };
+		A35B65EE238966B200D6044E /* PublicTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35B65ED238966B200D6044E /* PublicTransport.swift */; };
+		A36A27A92389954F00A7F89E /* Accommodation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36A27A82389954F00A7F89E /* Accommodation.swift */; };
 		A396B53E23888D6B00665F00 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B53D23888D6B00665F00 /* SearchViewController.swift */; };
 		A396B54023889B4B00665F00 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B53F23889B4B00665F00 /* TripViewController.swift */; };
 		A396B5422388B57A00665F00 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A396B5412388B57A00665F00 /* ResultViewController.swift */; };
@@ -31,6 +34,9 @@
 		A357CBE92388814C00F708CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A357CBEB2388814C00F708CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A357CBF1238887A200F708CD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A35B65EB2389484400D6044E /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		A35B65ED238966B200D6044E /* PublicTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTransport.swift; sourceTree = "<group>"; };
+		A36A27A82389954F00A7F89E /* Accommodation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accommodation.swift; sourceTree = "<group>"; };
 		A396B53D23888D6B00665F00 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A396B53F23889B4B00665F00 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		A396B5412388B57A00665F00 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +84,9 @@
 				A396B53F23889B4B00665F00 /* TripViewController.swift */,
 				A396B5412388B57A00665F00 /* ResultViewController.swift */,
 				26753F29238965100064EC8A /* DesignableTextField.swift */,
+				A35B65EB2389484400D6044E /* Car.swift */,
+				A35B65ED238966B200D6044E /* PublicTransport.swift */,
+				A36A27A82389954F00A7F89E /* Accommodation.swift */,
 			);
 			path = "Bay´n´b-Storyboard";
 			sourceTree = "<group>";
@@ -155,11 +164,14 @@
 			files = (
 				A396B53E23888D6B00665F00 /* SearchViewController.swift in Sources */,
 				A357CBE22388814B00F708CD /* ViewController.swift in Sources */,
+				A35B65EC2389484400D6044E /* Car.swift in Sources */,
 				A396B5422388B57A00665F00 /* ResultViewController.swift in Sources */,
 				26753F2A238965100064EC8A /* DesignableTextField.swift in Sources */,
 				A357CBDE2388814B00F708CD /* AppDelegate.swift in Sources */,
 				A396B54023889B4B00665F00 /* TripViewController.swift in Sources */,
 				A357CBE02388814B00F708CD /* SceneDelegate.swift in Sources */,
+				A35B65EE238966B200D6044E /* PublicTransport.swift in Sources */,
+				A36A27A92389954F00A7F89E /* Accommodation.swift in Sources */,
 				A357CBF2238887A200F708CD /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

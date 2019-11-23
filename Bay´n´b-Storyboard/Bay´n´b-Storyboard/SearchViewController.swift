@@ -97,6 +97,25 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func search(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let vC = storyboard.instantiateViewController(identifier: "Result")
+        if let vC = vC as? ResultViewController {
+            let transport = bySegmentControl.selectedSegmentIndex
+            if (transport == 0) { //car
+                vC.byCar = true
+                vC.addressTo = "Garmisch-Partenkirchen" //TODO
+                vC.addressFrom = "München" //TODO
+            }
+            if (transport == 1) { //train
+                vC.byTrain = true
+            }
+            if (transport == 2) { //plane
+                vC.byPlane = true
+            }
+        }
+        self.present(vC, animated: true, completion: nil)
+        
     }
     
     @objc func hideKeyboard(_ gesture: UITapGestureRecognizer) {
