@@ -13,6 +13,12 @@ class TripsViewController: UIViewController {
     static var trips: [(PublicTransport?, Car?, Accommodation, Activity)] = [] {
         didSet {
             viewController?.tripTableView?.reloadData()
+            
+            guard let tab = UIApplication.shared.keyWindow?.rootViewController as? UITabBarController else {
+                return
+            }
+            
+            tab.selectedIndex = 1
         }
     }
     static var viewController: TripsViewController!
@@ -26,7 +32,7 @@ class TripsViewController: UIViewController {
         
         tripTableView!.dataSource = self
         
-        
+        tripTableView?.tableFooterView = UIView()
     }
 }
 

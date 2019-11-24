@@ -240,6 +240,8 @@ extension ResultViewController: EditAccommodation {
     func updateAccommodation(acc: Accommodation) {
         totalPrice -= accommodation!.price * days
         accommodation = acc
+        accommodation?.fromDate = fromDate
+        accommodation?.toDate = toDate
         accommodationValuesDidChange()
     }
 }

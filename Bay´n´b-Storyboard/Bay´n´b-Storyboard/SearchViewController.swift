@@ -97,6 +97,7 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func search(_ sender: Any) {
+        self.view.endEditing(true)
         
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let vC = storyboard.instantiateViewController(identifier: "Result")

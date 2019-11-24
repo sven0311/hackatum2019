@@ -20,6 +20,7 @@ class TripsTableViewCell: UITableViewCell {
     @IBOutlet weak var tripWhereLabel: UILabel!
     @IBOutlet weak var tripWhenLabel: UILabel!
     @IBOutlet weak var tripActionImage: UIImageView!
+    @IBOutlet weak var tripEndLabel: UILabel!
     
     func updateView() {
         tripWhereLabel.text = trip?.2.location
@@ -30,7 +31,8 @@ class TripsTableViewCell: UITableViewCell {
         let formattedToDate = format.string(from: trip!.2.toDate)
 
         
-        tripWhenLabel.text = formattedFromDate + " - " + formattedToDate
+        tripWhenLabel.text = formattedFromDate
+        tripEndLabel.text = formattedToDate
         tripImage.image = trip?.2.image
         
         tripActionImage.image = UIImage(named: "icons8-skiing-100")
